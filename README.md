@@ -35,7 +35,7 @@ A aplicação implementa conceitos fundamentais do React, incluindo:
 
 ### Consumo de API
 
-A aplicação realiza integração com a API pública do GitHub para exibição de informações do usuário, demonstrando o uso de:
+A aplicação realiza integração com a API pública JSONPlaceholder para exibição de informações do usuário, demonstrando o uso de:
 
 * fetch()
 * async/await
