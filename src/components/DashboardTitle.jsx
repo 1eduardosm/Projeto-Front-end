@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { buscarUsuario } from '../service/githubService'
+import { buscarUsuario } from '../service/userService'
 import { useUsuario } from '../context/UsuarioContext';
 
 const DashboardPage = () => {
@@ -9,14 +9,11 @@ const DashboardPage = () => {
 
     const { usuario } = useUsuario()
 
-    const [busca, setBusca] = useState(usuario);
-
-
 
     useEffect(() => {
         async function carregar() {
             try {
-                const dados = await buscarUsuario(busca)
+                const dados = await buscarUsuario(usuario)
                 setUser(dados)
             } catch (e) {
                 setErro(e.message)
@@ -26,15 +23,15 @@ const DashboardPage = () => {
         }
 
         carregar()
-    }, [busca])
+    }, [usuario])
 
     if (loading) return <p>Carregando dados...</p>
     if (erro) return <p>{erro}</p>
 
     return (
         <div style={{ display: 'flex' }}>
-            <img width='200' src={user.avatar_url} />
-            <h1>Olá, {user.name || user.login}!</h1>
+            <img width='200' src={user.photo} />
+            <h1>Olá, {user.name || user.username}!</h1>
 
         </div>
     )

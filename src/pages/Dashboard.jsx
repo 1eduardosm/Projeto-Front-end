@@ -1,5 +1,6 @@
 import React from 'react'
-import DashboardPage from './DashboardPage'
+import DashboardPage from '../components/DashboardTitle'
+import { NavLink } from 'react-router-dom'
 
 const Dashboard = () => {
 
@@ -9,13 +10,53 @@ const Dashboard = () => {
                 <div className="menu__body">
                     <h1 className="menu__title">Academia <span>Portal do aluno</span></h1>
                     <nav className="menu__links">
-                        <a className="menu__item menu__item--active" href="dashboard.html" alt="">Painel</a>
-                        <a className="menu__item" href="" alt="">Disciplinas</a>
-                        <a className="menu__item" href="" alt="">Tutor IA</a>
-                        <a className="menu__item" href="" alt="">Perfil</a>
-                    </nav>
-                </div>
-            </header>
+                        <NavLink
+                            to="/dashboard"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'menu__item menu__item--active'
+                                    : 'menu__item'
+                            }
+                        >
+                            Painel
+                        </NavLink>
+
+                        <NavLink
+                            to="/disciplines"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'menu__item menu__item--active'
+                                    : 'menu__item'
+                            }
+                        >
+                            Disciplinas
+                        </NavLink>
+
+                        <NavLink
+                            to="/aiTutor"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'menu__item menu__item--active'
+                                    : 'menu__item'
+                            }
+                        >
+                            Tutor IA
+                        </NavLink>
+
+                        <NavLink
+                            to="/profile"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'menu__item menu__item--active'
+                                    : 'menu__item'
+                            }
+                        >
+                            Perfil
+                        </NavLink>
+
+                    </nav >
+                </div >
+            </header >
 
             <div className="dashboard__container">
 
@@ -97,7 +138,7 @@ const Dashboard = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 
