@@ -1,64 +1,15 @@
 import React from 'react'
 import DashboardPage from '../components/DashboardTitle'
-import { NavLink } from 'react-router-dom'
+import Header from '../components/Header'
 
 const Dashboard = () => {
 
     return (
-        <div className="dashboard">
-            <header className="menu">
-                <div className="menu__body">
-                    <h1 className="menu__title">Academia <span>Portal do aluno</span></h1>
-                    <nav className="menu__links">
-                        <NavLink
-                            to="/dashboard"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? 'menu__item menu__item--active'
-                                    : 'menu__item'
-                            }
-                        >
-                            Painel
-                        </NavLink>
+        <div className="content">
 
-                        <NavLink
-                            to="/disciplines"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? 'menu__item menu__item--active'
-                                    : 'menu__item'
-                            }
-                        >
-                            Disciplinas
-                        </NavLink>
+            <Header />
 
-                        <NavLink
-                            to="/aiTutor"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? 'menu__item menu__item--active'
-                                    : 'menu__item'
-                            }
-                        >
-                            Tutor IA
-                        </NavLink>
-
-                        <NavLink
-                            to="/profile"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? 'menu__item menu__item--active'
-                                    : 'menu__item'
-                            }
-                        >
-                            Perfil
-                        </NavLink>
-
-                    </nav >
-                </div >
-            </header >
-
-            <div className="dashboard__container">
+            <div className="content__container">
 
                 <div className="welcome">
                     <h2 id="greeting">

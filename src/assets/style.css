@@ -111,11 +111,11 @@ body{
     text-decoration: underline;
 }
 
-.dashboard{
+.content{
     background-color: #ededed;
 }
 
-.dashboard__container{
+.content__container{
     width: 960px;
     margin: 0 auto;
 }
@@ -268,4 +268,12 @@ body{
 
 .card__group .card__description{
     font-size: 12px;
+}
+
+.aiMsg {
+    background-color: #999999;
+}
+
+.userMsg {
+    background-color: #0F5830;
 }
