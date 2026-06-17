@@ -30,6 +30,7 @@ const AiTutor = () => {
       }
     ]);
     setMsg('')
+    setTimeout(() => {}, 1000)
 
     try {
       const apiResponse = await aiResponse()
@@ -62,13 +63,10 @@ const AiTutor = () => {
     } finally {
       setAwaitingAi(false)
     }
-
-
-
   }
 
   return (
-    <div className="dashboard">
+    <div className="content">
 
       <Header />
 

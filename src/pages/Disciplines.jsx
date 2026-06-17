@@ -1,8 +1,11 @@
 import React from 'react'
+import Header from '../components/Header'
 
 const Disciplines = () => {
   return (
-    <div>Disciplines</div>
+    <div className="content">
+      <Header />
+    </div>
   )
 }
 
