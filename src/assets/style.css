@@ -1,79 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Datatype:wght@100..900&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    padding: 0; 
+body {
+    padding: 0;
     margin: 0;
-
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
-.container{
+button,
+input {
+    font-family: "DM Sans", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
     display: flex;
+    min-height: 100vh;
 }
 
 .container > div {
     width: 50%;
 }
 
-.hero{
+.hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     color: #FFFFFF;
     font-family: "Datatype", monospace;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+    font-variation-settings: "wdth" 100;
     background-color: #0F5830;
 }
 
-.hero p{
+.hero p {
     display: block;
     width: 80%;
     font-size: 40px;
 }
 
-.hero p span{
+.hero p span {
     display: block;
     margin-top: 30px;
     font-size: 14px;
     text-transform: uppercase;
 }
 
-.formulario{
+.formulario {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    
+    min-height: 100vh;
+    background-color: #FFFFFF;
 }
 
-.formulario > div{
+.formulario > div {
     width: 50%;
 }
 
-.formulario label{
+.formulario label {
     display: block;
     margin-top: 30px;
     margin-bottom: 10px;
 }
 
-.formulario label a{
+.formulario label a {
     float: right;
 }
 
-.formulario input{
+.formulario input {
     display: block;
     width: 100%;
     padding: 8px 12px;
@@ -85,7 +93,7 @@ body{
     border: 1px solid red;
 }
 
-.formulario button{
+.formulario button {
     display: block;
     width: 100%;
     margin-top: 30px;
@@ -98,182 +106,907 @@ body{
     background-color: #0F5830;
 }
 
-.formulario .registre-se{
+.formulario .registre-se {
     text-align: center;
 }
 
-.formulario a{
+.formulario a {
     color: #0F5830;
     text-decoration: none;
 }
 
-.formulario a:hover{
+.formulario a:hover {
     text-decoration: underline;
 }
 
-.content{
+.content {
+    min-height: 100vh;
     background-color: #ededed;
 }
 
-.content__container{
+.content__container {
     width: 960px;
+    max-width: calc(100% - 32px);
     margin: 0 auto;
 }
 
-.menu{
+.menu {
     background-color: #FFFFFF;
 }
 
-.menu__body{
+.menu__body {
     display: flex;
     align-items: center;
     width: 960px;
+    max-width: calc(100% - 32px);
     margin: 0 auto;
     padding: 20px 0;
-
 }
 
-.menu__title{
+.menu__title {
     margin: 0;
     font-size: 18px;
     color: #0F5830;
 }
 
-.menu__title span{
+.menu__title span {
     display: block;
     font-size: 12px;
     color: #CCCCCC;
 }
 
-.menu__links{
+.menu__links {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.menu__item{
-    display: inline-block;
+.menu__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 0 8px;
     color: #999999;
     text-decoration: none;
     font-weight: bold;
 }
 
-.menu__item:hover{
+.menu__item:hover {
     text-decoration: underline;
 }
 
-.menu__item--active{
+.menu__item--active {
     color: #0F5830;
 }
 
-.welcome{
-    padding: 40px 0;
+.welcome {
+    padding: 48px 0 18px 0;
 }
 
-.welcome h2{ 
+.welcome h2 {
     margin: 0;
     font-size: 32px;
+    line-height: 1.2;
+    font-weight: 800;
     color: #0F5830;
 }
 
-.welcome p{
-    color: #999999;
+.welcome p {
+    max-width: 720px;
+    margin: 12px 0 0 0;
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-
-.card{
+.card {
+    width: 100%;
     display: flex;
-    padding: 32px;
-    margin: 30px 0;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 32px;
+    margin: 24px 0;
     background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
+    border: 1px solid #dfe3ea;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-.card__body{
-    flex-grow: 1;
-    padding-right: 50px;
+.card__body {
+    flex: 1;
+    min-width: 0;
+    padding-right: 0;
 }
 
-.card__badge{
+.card__badge {
     display: inline-block;
-    padding: 8px;
-    background-color: #CCCCCC;
-    color: #0F5830;
-    font-size: 12px;
+    padding: 7px 10px;
+    background-color: #e9fbe9;
+    color: #2f9e44;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
-.card__title{
+.card__title {
+    margin: 14px 0 4px 0;
+    padding-top: 0;
+    color: #1f2937;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.card__description {
     margin: 0;
-    padding-top: 16px;
-    color: #0F5830;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.card__description{
-    margin: 0;
-    color: #999999;
+.card__progress {
+    width: 100%;
+    max-width: 520px;
+    height: 9px;
+    margin-top: 18px;
+    background-color: #eef0f4;
+    border-radius: 999px;
+    overflow: hidden;
+    font-size: 0;
 }
 
-.card__progress{
-    width: 75%;
-    height: 10px;
-    margin-top: 16px;
-    background-color: #CCCCCC;
-    border-radius: 8px;
-    font-size: 9px;
-    text-align: right;
-    color: #FFFFFF;
-}
-
-.card__progress div{
-    width: 65%;
-    height: 10px;
+.card__progress div {
+    height: 100%;
     background-color: #0F5830;
-    border-radius: 8px;
+    border-radius: 999px;
 }
 
-.card__button{
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    margin-left: 30px;
-    padding: 16px;
+.card__button {
+    width: 180px;
+    min-height: 48px;
+    margin: 0;
+    padding: 0 18px;
     color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 800;
     text-transform: uppercase;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: #0F5830;
+    flex-shrink: 0;
 }
 
-.card__group{
-    display: flex;
+.card__button:hover {
+    background-color: #0b4425;
 }
 
-.card__group .card{
-    width: 33%;
-    margin: 0 8px;
+.card__group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0 48px 0;
 }
 
-.card__group .card__badge{
+.card__group .card {
+    width: 100%;
+    min-height: 150px;
+    margin: 0;
+    padding: 24px;
+    align-items: flex-start;
+}
+
+.card__group .card__body {
+    padding-right: 0;
+}
+
+.card__group .card__badge {
     margin: 0;
     padding: 0;
     background-color: transparent;
-    color: #999999;
-}
-
-.card__group .card__title{
-    margin: 8px 0;
-    padding-top: 0;
-}
-
-.card__group .card__description{
+    color: #6b7280;
     font-size: 12px;
 }
 
+.card__group .card__title {
+    margin: 10px 0 4px 0;
+    padding-top: 0;
+    color: #0F5830;
+    font-size: 26px;
+}
+
+.card__group .card__description {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.chat-container {
+    width: 100%;
+    height: calc(100vh - 130px);
+    min-height: 520px;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    background-color: #F7F7F7;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #CCCCCC;
+    border-radius: 20px;
+}
+
+.aiMsg,
+.userMsg {
+    max-width: 75%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
 .aiMsg {
-    background-color: #999999;
+    align-self: flex-start;
+    background-color: #FFFFFF;
+    color: #333333;
+    border: 1px solid #DDDDDD;
+    border-bottom-left-radius: 4px;
 }
 
 .userMsg {
+    align-self: flex-end;
     background-color: #0F5830;
+    color: #FFFFFF;
+    border-bottom-right-radius: 4px;
+}
+
+.aiMsg span {
+    color: #999999;
+    font-style: italic;
+}
+
+.chat-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #CCCCCC;
+}
+
+.chat-input > div {
+    flex: 1;
+}
+
+.chat-input input {
+    width: 100%;
+    height: 58px;
+    padding: 0 18px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+.chat-input input::placeholder {
+    color: #999999;
+}
+
+.chat-input input:focus {
+    border-color: #0F5830;
+}
+
+.chat-input button {
+    width: 130px;
+    height: 58px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0F5830;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.chat-input button:hover {
+    background-color: #0b4425;
+}
+
+.chat-input button:disabled {
+    background-color: #999999;
+    cursor: not-allowed;
+}
+
+.disciplines {
+    padding: 48px 0;
+}
+
+.disciplines__title {
+    margin: 0 0 32px 0;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.disciplines__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.discipline-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.discipline-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.discipline-card__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.discipline-card__teacher {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.discipline-card__badge {
+    display: inline-block;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: #f1f5f9;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.discipline-card__badge--active {
+    background-color: #e9fbe9;
+    color: #2f9e44;
+}
+
+.discipline-card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.discipline-card__info strong {
+    font-size: 13px;
+    color: #374151;
+}
+
+.discipline-card__progress {
+    width: 100%;
+    height: 8px;
+    background-color: #eef0f4;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.discipline-card__progress div {
+    height: 100%;
+    background-color: #33994a;
+    border-radius: 999px;
+}
+
+.discipline-card__button {
+    width: 100%;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #33994a;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.discipline-card__button:hover {
+    background-color: #287c3b;
+}
+
+.profile {
+    padding: 48px 0;
+}
+
+.profile__header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 42px;
+}
+
+.profile__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #0F5830;
+    color: #33994a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.profile__name {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.profile__course {
+    margin: 4px 0 0 0;
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.profile__tabs {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: fit-content;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #d9dee7;
+}
+
+.profile__tab {
+    padding: 0 0 14px 0;
+    border: none;
+    background-color: transparent;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profile__tab--active {
+    color: #33994a;
+    border-bottom: 2px solid #33994a;
+}
+
+.profile__card {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profile__row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    min-height: 72px;
+    padding: 0 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile__row:last-child {
+    border-bottom: none;
+}
+
+.profile__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.profile__value {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+@media (max-width: 980px) {
+    .content__container {
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+
+    .menu__body {
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+
+    .welcome {
+        padding-top: 36px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .card__group {
+        gap: 14px;
+    }
+
+    .disciplines {
+        padding: 36px 0;
+    }
+
+    .disciplines__grid {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container > div {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .hero p {
+        font-size: 30px;
+    }
+
+    .formulario {
+        min-height: auto;
+        padding: 50px 0;
+    }
+
+    .formulario > div {
+        width: calc(100% - 40px);
+        max-width: 420px;
+    }
+
+    .menu__body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .menu__links {
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .menu__item {
+        padding: 0;
+        margin-right: 8px;
+    }
+
+    .welcome {
+        padding: 32px 0 12px 0;
+    }
+
+    .welcome h2 {
+        font-size: 26px;
+    }
+
+    .welcome p {
+        font-size: 14px;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+        padding: 22px;
+        margin: 18px 0;
+    }
+
+    .card__title {
+        font-size: 20px;
+    }
+
+    .card__progress {
+        max-width: 100%;
+    }
+
+    .card__button {
+        width: 100%;
+    }
+
+    .card__group {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 36px;
+    }
+
+    .card__group .card {
+        min-height: auto;
+    }
+
+    .chat-container {
+        height: calc(100vh - 170px);
+        min-height: 480px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    .chat-messages {
+        padding: 18px;
+    }
+
+    .aiMsg,
+    .userMsg {
+        max-width: 85%;
+        font-size: 14px;
+    }
+
+    .chat-input input {
+        height: 54px;
+        font-size: 15px;
+    }
+
+    .chat-input button {
+        width: 115px;
+        height: 54px;
+    }
+
+    .disciplines__title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .disciplines__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .discipline-card {
+        padding: 20px;
+    }
+
+    .profile {
+        padding: 36px 0;
+    }
+
+    .profile__header {
+        margin-bottom: 32px;
+    }
+
+    .profile__name {
+        font-size: 26px;
+    }
+
+    .profile__course {
+        font-size: 14px;
+    }
+
+    .profile__tabs {
+        gap: 24px;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .profile__tab {
+        white-space: nowrap;
+    }
+
+    .profile__row {
+        grid-template-columns: 220px 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .content__container {
+        width: calc(100% - 20px);
+    }
+
+    .menu__body {
+        width: calc(100% - 20px);
+    }
+
+    .menu__links {
+        gap: 12px;
+    }
+
+    .menu__item {
+        font-size: 13px;
+    }
+
+    .welcome {
+        padding: 26px 0 8px 0;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+    .welcome p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    .card__badge {
+        font-size: 10px;
+    }
+
+    .card__title {
+        font-size: 19px;
+    }
+
+    .card__description {
+        font-size: 13px;
+    }
+
+    .card__button {
+        min-height: 44px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+
+    .card__group .card {
+        padding: 18px;
+    }
+
+    .card__group .card__title {
+        font-size: 24px;
+    }
+
+    .chat-container {
+        height: calc(100vh - 150px);
+        min-height: 420px;
+        margin-top: 12px;
+        border-radius: 8px;
+    }
+
+    .chat-messages {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .aiMsg,
+    .userMsg {
+        max-width: 92%;
+        padding: 12px 14px;
+        font-size: 14px;
+        border-radius: 14px;
+    }
+
+    .aiMsg {
+        border-bottom-left-radius: 4px;
+    }
+
+    .userMsg {
+        border-bottom-right-radius: 4px;
+    }
+
+    .chat-input {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .chat-input input {
+        height: 52px;
+        padding: 0 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .chat-input button {
+        width: 95px;
+        height: 52px;
+        padding: 0;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .disciplines {
+        padding: 28px 0;
+    }
+
+    .discipline-card__header {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .discipline-card__title {
+        font-size: 18px;
+    }
+
+    .discipline-card__badge {
+        font-size: 10px;
+    }
+
+    .discipline-card__button {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .profile {
+        padding: 28px 0;
+    }
+
+    .profile__header {
+        gap: 14px;
+        margin-bottom: 28px;
+    }
+
+    .profile__avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 19px;
+    }
+
+    .profile__name {
+        font-size: 23px;
+    }
+
+    .profile__course {
+        font-size: 13px;
+    }
+
+    .profile__tabs {
+        gap: 22px;
+        margin-bottom: 24px;
+    }
+
+    .profile__card {
+        border-radius: 8px;
+    }
+
+    .profile__row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .profile__label {
+        font-size: 13px;
+    }
+
+    .profile__value {
+        font-size: 15px;
+    }
 }
