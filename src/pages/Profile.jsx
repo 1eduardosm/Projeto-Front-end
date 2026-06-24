@@ -1,27 +1,40 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Header from '../components/Header'
+import { useUsuario } from '../context/UsuarioContext';
+import { useNavigate } from 'react-router-dom'
+
 
 const Profile = () => {
+
+  const { usuario } = useUsuario()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!usuario) {
+      navigate('/')
+    }
+  }, [])
+
   const dadosPessoais = [
     {
       label: 'Nome Completo',
-      value: 'João Silva'
+      value: usuario?.name
     },
     {
-      label: 'Nome de Preferência',
-      value: 'Jonh'
+      label: 'Username',
+      value: usuario?.username
     },
     {
       label: 'Endereço de E-mail',
-      value: 'joao.silva@satc.edu.br'
+      value: usuario?.email
     },
     {
       label: 'Matrícula / CPF',
-      value: '***.***.***-89'
+      value: usuario?.id
     },
     {
       label: 'Número de Telefone',
-      value: 'Não fornecido'
+      value: usuario?.address.zipcode
     }
   ]
 
@@ -34,12 +47,12 @@ const Profile = () => {
 
           <div className="profile__header">
             <div className="profile__avatar">
-              JS
+              <img src={usuario?.photo} alt="Avatar" />
             </div>
 
             <div>
               <h2 className="profile__name">
-                João Silva
+                {usuario?.name}
               </h2>
 
               <p className="profile__course">

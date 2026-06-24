@@ -1,38 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { buscarUsuario } from '../service/userService'
 import { useUsuario } from '../context/UsuarioContext';
+import { useNavigate } from 'react-router-dom'
 
 const DashboardPage = () => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true)
-    const [erro, setErro] = useState('')
 
+    const navigate = useNavigate()
     const { usuario } = useUsuario()
 
-
     useEffect(() => {
-        async function carregar() {
-            try {
-                const dados = await buscarUsuario(usuario)
-                setUser(dados)
-            } catch (e) {
-                setErro(e.message)
-            } finally {
-                setLoading(false)
-            }
+        if (!usuario) {
+            navigate('/')
         }
+    }, [])
 
-        carregar()
-    }, [usuario])
-
-    if (loading) return <p>Carregando dados...</p>
-    if (erro) return <p>{erro}</p>
-
-    return (
+    return !usuario ? (<>Não foi possível encontrar os dados</>) : (
         <div style={{ display: 'flex' }}>
-            <img width='200' src={user.photo} />
-            <h1>Olá, {user.name || user.username}!</h1>
-
+            <img width='200' src={usuario.photo} />
+            <h1>Olá, {usuario.name || usuario.username}!</h1>
         </div>
     )
 }
